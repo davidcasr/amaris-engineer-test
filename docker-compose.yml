@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  # DynamoDB Local
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: fondos-dynamodb
+    ports:
+      - "8000:8000"
+    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-inMemory"]
+    networks:
+      - fondos-network
+
+  # Backend FastAPI
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fondos-backend
+    ports:
+      - "8001:8000"
+    environment:
+      - DYNAMODB_ENDPOINT=http://dynamodb:8000
+      - AWS_REGION=us-west-2
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+    depends_on:
+      - dynamodb
+    networks:
+      - fondos-network
+    volumes:
+      - ./backend/app:/app/app
+    restart: unless-stopped
+
+networks:
+  fondos-network:
+    driver: bridge

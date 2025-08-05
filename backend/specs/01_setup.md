@@ -21,7 +21,7 @@ backend/
 ```
 
 Paso 3: Configuración de dependencias
-En el archivo requirements.txt, definimos las dependencias principales:
+En el archivo requirements.txt, definimos las dependencias principales, usa las versiones mas recientes de cada una:
 
 ```
 fastapi
