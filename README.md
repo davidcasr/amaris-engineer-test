@@ -193,4 +193,8 @@ NODE_ENV=production
 - Ajustar `frontend/.env` para diferentes entornos
 - Configurar `backend/app/config.py` para parámetros del sistema
 
+## Nota (Sobre la parte 2)
+
+La parte 2 de la prueba que solicitaba la creación de una consulta SQL se encuentra solucionado en el directorio `docs/second_part.md`
+
 Made with ❤️ by @davidcasr
