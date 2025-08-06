@@ -32,6 +32,8 @@ services:
       - fondos-network
     volumes:
       - ./backend/app:/app/app
+      - ./backend/tests:/app/tests
+      - ./backend/pytest.ini:/app/pytest.ini
     restart: unless-stopped
 
 networks:
