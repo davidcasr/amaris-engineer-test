@@ -65,7 +65,7 @@ frontend/
 
 - Usa useState, useEffect y fetch sin librerías extra.
 - Reutiliza componentes como FundCard, TransactionRow, FormInput.
-- Utiliza archivos .env para guardar la URL del backend (por ejemplo: VITE_API_URL=http://localhost:8002).
+- Utiliza archivos .env para guardar la URL del backend (por ejemplo: VITE_API_URL=http://localhost:8001).
 - Si usas Tailwind, puedes hacerlo usando CSS plano para simplificar aún más.
 
 ## Guía de Inicio

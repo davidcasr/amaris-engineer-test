@@ -36,6 +36,22 @@ services:
       - ./backend/pytest.ini:/app/pytest.ini
     restart: unless-stopped
 
+  # Frontend React + Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: fondos-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - fondos-network
+    restart: unless-stopped
+
 networks:
   fondos-network:
     driver: bridge
