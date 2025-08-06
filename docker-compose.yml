@@ -24,6 +24,8 @@ services:
       - AWS_REGION=us-west-2
       - AWS_ACCESS_KEY_ID=dummy
       - AWS_SECRET_ACCESS_KEY=dummy
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - ENABLE_AUTO_DB_INIT=${ENABLE_AUTO_DB_INIT:-true}
     depends_on:
       - dynamodb
     networks:
